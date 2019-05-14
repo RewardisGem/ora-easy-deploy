@@ -7,7 +7,7 @@ echo please input DB_NAME/SID
 read ORACLE_SID
 
 
-echo pls input charset CHARSET
+echo please input charset CHARSET
 read CHARSET
 
 
