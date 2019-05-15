@@ -59,4 +59,30 @@ Version 19.3.0.0.0
 
 SQL> 
 
+
+
+
+
+
+
 ```
+
+
+###关闭部分19c特性
+```
+sql
+
+
+alter system set "_optimizer_aggr_groupby_elim"=false;
+alter system set "_drop_stat_segment"=1;
+alter system set "_common_data_view_enabled"=false;
+alter system set optimizer_adaptive_features=false;
+alter system set "_optimizer_dsdir_usage_control"=0; 
+
+
+
+```
+
+
+
+
