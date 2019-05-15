@@ -96,7 +96,6 @@ alter system set audit_trail=none scope=spfile;
 alter system set "_memory_imm_mode_without_autosga"=false scope=both; 
 alter system set "_enable_shared_pool_durations"=false scope=spfile;
 alter system set deferred_segment_creation=false; 
-alter system set "_resource_manager_always_on"=false scope=spfile;
 alter system set "_datafile_write_errors_crash_instance"=false ;
 alter system set "_fairness_threshold"=6 scope=spfile;
 alter system set "_gc_read_mostly_locking"=false scope=spfile;
@@ -106,7 +105,6 @@ alter system set "parallel_force_local"=false;
 alter system set "_gc_bypass_readers"=false;
 alter system set "_row_cr"=false;
 alter system set ddl_lock_timeout=0;
-
 alter system set "_gby_hash_aggregation_enabled"=False scope=spfile;
 alter system set "_cleanup_rollback_entries"=400 scope=spfile;
 alter system set "_dbms_sql_security_level"=0                          scope=spfile;
@@ -121,20 +119,19 @@ alter system set "_like_with_bind_as_equality"=TRUE                    scope=spf
 alter system set optimizer_secure_view_merging=false                   scope=spfile;
 alter system set optimizer_capture_sql_plan_baselines=False            scope=spfile;
 alter system set event="10949 TRACE NAME CONTEXT FOREVER:28401 trace name context forever, level 1"  scope=spfile;
-
-
 exec  DBMS_AUTO_TASK_ADMIN.DISABLE( client_name =>  'auto optimizer stats collection', operation => NULL,window_name => NULL);
 exec  DBMS_AUTO_TASK_ADMIN.DISABLE( client_name =>  'auto space advisor', operation => NULL,window_name => NULL);
 exec  DBMS_AUTO_TASK_ADMIN.DISABLE( client_name => 'sql tuning advisor', operation => NULL,window_name => NULL);
 commit;
-
 exec dbms_scheduler.disable('ORACLE_OCM.MGMT_CONFIG_JOB');
 exec dbms_scheduler.disable('ORACLE_OCM.MGMT_STATS_CONFIG_JOB');
-
-
 exec DBMS_STATS.SET_PARAM( 'method_opt','FOR ALL COLUMNS SIZE 1' );
 commit;
 
+
+
+shutdown immediate;
+startup ;
 
 
 ```
