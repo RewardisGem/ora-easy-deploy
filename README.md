@@ -1,6 +1,8 @@
 # ora-easy-deploy
 
 
+## WORKS ON CENTOS REDHAT ORACLE LINUX 
+
 国外主机
 ```
 su - root 
