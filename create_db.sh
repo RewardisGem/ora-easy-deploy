@@ -31,7 +31,7 @@ NETCA=$ORACLE_HOME/bin/netca
 ORACLE_OWNER=oracle
 
 
-echo -e "export LANG=en_US.UTF-8\nexport ORACLE_HOME=/opt/oracle/product/19c/dbhome_1\nexport NLS_LANG=american_america.$CHARSET\nexport ORACLE_SID=$ORACLE_SID\nexport ORACLE_BASE=/opt/oracle\nalias sql='sqlplus / as sysdba'\n export PATH=$ORACLE_HOME/bin:$PATH"  > /home/oracle/.bash_profile
+echo -e "if [ -f ~/bashrc ];\nthen . ~/bashrc\nfi\nexport LANG=en_US.UTF-8\nexport ORACLE_HOME=/opt/oracle/product/19c/dbhome_1\nexport NLS_LANG=american_america.$CHARSET\nexport ORACLE_SID=$ORACLE_SID\nexport ORACLE_BASE=/opt/oracle\nalias sql='sqlplus / as sysdba'\n export PATH=$ORACLE_HOME/bin:$PATH"  > /home/oracle/.bash_profile
 
 su -s /bin/bash $ORACLE_OWNER -c "$DBCA -silent -createDatabase -gdbName $ORACLE_SID -templateName $TEMPLATE_NAME -characterSet $CHARSET -createAsContainerDatabase $CREATE_AS_CDB  -datafileDestination $ORACLE_DATA_LOCATION -sid $ORACLE_SID -autoGeneratePasswords"
 
