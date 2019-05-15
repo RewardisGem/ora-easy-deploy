@@ -39,7 +39,7 @@ bash ora-easy-deploy/create_db.sh
 
 ### 安装完成后
 ```
-#设置ORACLE密码
+#设置ORACLE OS账户密码
 su - root
 passwd oracle                     
 su - oracle
