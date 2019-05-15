@@ -1,7 +1,7 @@
 # ora-easy-deploy
 
 
-### WORKS ON CENTOS REDHAT ORACLE LINUX 
+### WORKS ON (CENTOS REDHAT ORACLE) LINUX 7
 
 国外主机
 ```
