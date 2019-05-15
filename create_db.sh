@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 
 echo please input DB_NAME/SID 
