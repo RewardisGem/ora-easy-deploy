@@ -14,6 +14,14 @@ echo please input oradata location
 read ORACLE_DATA_LOCATION
 
 mkdir -p $ORACLE_DATA_LOCATION
+chown oracle $ORACLE_DATA_LOCATION
+
+
+echo please input SYS PASSWORD
+read SYSPASSWORD
+
+echo please input SYSTEM PASSWORD
+read SYSTEMPASSWORD
 
 
 export ORACLE_SID=$ORACLE_SID
@@ -35,7 +43,7 @@ cat /home/oracle/.bashrc > /home/oracle/.bash_profile
 
 echo -e "export LANG=en_US.UTF-8\nexport ORACLE_HOME=/opt/oracle/product/19c/dbhome_1\nexport NLS_LANG=american_america.$CHARSET\nexport ORACLE_SID=$ORACLE_SID\nexport ORACLE_BASE=/opt/oracle\nalias sql='sqlplus / as sysdba'\nexport PATH=$ORACLE_HOME/bin:$ORACLE_HOME/OPatch:/bin:/sbin:/usr/bin:/usr/sbin"  >> /home/oracle/.bash_profile
 
-su -s /bin/bash $ORACLE_OWNER -c "$DBCA -silent -createDatabase -gdbName $ORACLE_SID -templateName $TEMPLATE_NAME -characterSet $CHARSET -createAsContainerDatabase $CREATE_AS_CDB  -datafileDestination $ORACLE_DATA_LOCATION -sid $ORACLE_SID -sysPassword -systemPassword"
+su -s /bin/bash $ORACLE_OWNER -c "$DBCA -silent -createDatabase -gdbName $ORACLE_SID -templateName $TEMPLATE_NAME -characterSet $CHARSET -createAsContainerDatabase $CREATE_AS_CDB  -datafileDestination $ORACLE_DATA_LOCATION -sid $ORACLE_SID -sysPassword $SYSPASSWORD  -systemPassword $SYSTEMPASSWORD"
 
 
 
