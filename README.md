@@ -35,3 +35,28 @@ yum -y localinstall oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
 rpm -ivh oracle-database-ee-19c-1.0-1.x86_64.rpm
 bash ora-easy-deploy/create_db.sh
 ```
+
+
+### 安装完成后
+```
+#设置ORACLE密码
+su - root
+passwd oracle                     
+su - oracle
+sql
+
+[oracle@vultr ~]$ sql
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Wed May 15 07:09:52 2019
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL> 
+
+```
