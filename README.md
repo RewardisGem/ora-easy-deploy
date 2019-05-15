@@ -19,10 +19,11 @@ rpm -ivh oracle-database-ee-19c-1.0-1.x86_64.rpm
 国内主机
 ```
 
-从ONEDRIVE下载介质并上传到服务器目录
+使用浏览器下载以下2个介质并上传到服务器目录
 
-https://1drv.ms/u/s!ApIdZTzqljlagYFm5MnX029ZHM-YUQ
-https://1drv.ms/u/s!ApIdZTzqljlagYFoZ7HINlbsRvwR2w
+https://download.oracle.com/otn/linux/oracle19c/190000/oracle-database-ee-19c-1.0-1.x86_64.rpm
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackage/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
+
 
 su - root 
 
