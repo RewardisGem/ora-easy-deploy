@@ -1,8 +1,6 @@
 
 
 
-
-
 echo please input DB_NAME/SID 
 read ORACLE_SID
 
@@ -12,6 +10,7 @@ read CHARSET
 
 echo please input oradata location 
 read ORACLE_DATA_LOCATION
+
 
 
 
@@ -30,7 +29,7 @@ NETCA=$ORACLE_HOME/bin/netca
 ORACLE_OWNER=oracle
 
 
-su -s /bin/bash  $ORACLE_OWNER -c "$DBCA -silent -createDatabase -gdbName $ORACLE_SID -templateName $TEMPLATE_NAME -characterSet $CHARSET -createAsContainerDatabase $CREATE_AS_CDB  -datafileDestination $ORACLE_DATA_LOCATION -sid $ORACLE_SID -autoGeneratePasswords"
+su -s /bin/bash $ORACLE_OWNER -c "$DBCA -silent -createDatabase -gdbName $ORACLE_SID -templateName $TEMPLATE_NAME -characterSet $CHARSET -createAsContainerDatabase $CREATE_AS_CDB  -datafileDestination $ORACLE_DATA_LOCATION -sid $ORACLE_SID -autoGeneratePasswords"
 
 
 
