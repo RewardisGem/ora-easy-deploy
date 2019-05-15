@@ -1,4 +1,6 @@
 #!/bin/bash
+# https://github.com/macleanliu/ora-easy-deploy
+# created by MACLEAN.LIU 
 
 
 echo please input DB_NAME/SID 
