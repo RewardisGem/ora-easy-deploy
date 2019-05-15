@@ -1,5 +1,5 @@
 
-
+#!/bin/bash
 
 su - root 
 
@@ -8,6 +8,7 @@ curl -o oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm https://yum.oracle.c
 
 
 yum -y localinstall oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
+rpm -ivh oracle-database-ee-19c-1.0-1.x86_64.rpm 
 
 
 
