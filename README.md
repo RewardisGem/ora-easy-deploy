@@ -13,9 +13,6 @@ wget https://www.dropbox.com/s/x14jlgnj062nef2/oracle-database-preinstall-19c-1.
 yum -y localinstall oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
 rpm -ivh oracle-database-ee-19c-1.0-1.x86_64.rpm
 bash ora-easy-deploy/create_db.sh
-
-
-
 ```
 
 
