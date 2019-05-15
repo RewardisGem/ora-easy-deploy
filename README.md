@@ -43,7 +43,11 @@ bash ora-easy-deploy/create_db.sh
 su - root
 passwd oracle                     
 su - oracle
+
+lsnrctl start 
 sql
+alter system register;
+
 
 [oracle@vultr ~]$ sql
 
@@ -57,8 +61,41 @@ Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 Version 19.3.0.0.0
 
-SQL> 
 
+SQL> alter system register;
+
+System altered.
+
+SQL> exit
+Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+
+[oracle@vultr ~]$ lsnrctl status
+
+LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-MAY-2019 07:28:31
+
+Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+
+Connecting to (ADDRESS=(PROTOCOL=tcp)(HOST=)(PORT=1521))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+Start Date                15-MAY-2019 07:27:06
+Uptime                    0 days 0 hr. 1 min. 24 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Log File         /opt/oracle/diag/tnslsnr/vultr/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=vultr.guest)(PORT=1521)))
+Services Summary...
+Service "PROD" has 1 instance(s).
+  Instance "PROD", status READY, has 1 handler(s) for this service...
+Service "PRODXDB" has 1 instance(s).
+  Instance "PROD", status READY, has 1 handler(s) for this service...
+The command completed successfully
 
 
 
