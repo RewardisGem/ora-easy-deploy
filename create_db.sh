@@ -11,7 +11,7 @@ read CHARSET
 echo please input oradata location 
 read ORACLE_DATA_LOCATION
 
-
+mkdir -p $ORACLE_DATA_LOCATION
 
 
 export ORACLE_SID=$ORACLE_SID
