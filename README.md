@@ -10,6 +10,7 @@ yum -y install git
 git clone https://github.com/macleanliu/ora-easy-deploy
 wget https://www.dropbox.com/s/8097ds292gabpk9/oracle-database-ee-19c-1.0-1.x86_64.rpm
 wget https://www.dropbox.com/s/x14jlgnj062nef2/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
+wget https://www.dropbox.com/s/xto5pf3j5qfa4xo/sqlcl-19.1.0.094.1619.zip
 yum -y localinstall oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
 rpm -ivh oracle-database-ee-19c-1.0-1.x86_64.rpm
 bash ora-easy-deploy/create_db.sh
