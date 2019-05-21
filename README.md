@@ -167,6 +167,11 @@ commit;
 
 
 
+// disable 19c automatic indexing feature 
+
+alter system set "_optimizer_auto_index_allow"=NEVER scope=spfile;
+alter system set "_optimizer_use_auto_indexes"=OFF scope=spfile;
+
 shutdown immediate;
 startup ;
 
