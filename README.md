@@ -162,6 +162,10 @@ exec  DBMS_AUTO_TASK_ADMIN.DISABLE( client_name => 'sql tuning advisor', operati
 commit;
 exec dbms_scheduler.disable('ORACLE_OCM.MGMT_CONFIG_JOB');
 exec dbms_scheduler.disable('ORACLE_OCM.MGMT_STATS_CONFIG_JOB');
+
+
+// to disable histogram , you set bucket size to 1
+
 exec DBMS_STATS.SET_PARAM( 'method_opt','FOR ALL COLUMNS SIZE 1' );
 commit;
 
