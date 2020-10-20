@@ -156,6 +156,11 @@ alter system set "_mv_refresh_use_stats"=True                          scope=spf
 alter system set "_like_with_bind_as_equality"=TRUE                    scope=spfile;
 alter system set optimizer_secure_view_merging=false                   scope=spfile;
 alter system set optimizer_capture_sql_plan_baselines=False            scope=spfile;
+alter system set optimizer_adaptive_plans=false                         scope=spfile;
+alter system set optimizer_adaptive_statistics=false                    scope=spfile;
+alter system set "_optimizer_gather_stats_on_conventional_dml"=false    scope=spfile;
+alter system set "_optimizer_use_stats_on_conventional_dm"=false    scope=spfile;
+
 alter system set event="10949 TRACE NAME CONTEXT FOREVER:28401 trace name context forever, level 1"  scope=spfile;
 exec  DBMS_AUTO_TASK_ADMIN.DISABLE( client_name =>  'auto optimizer stats collection', operation => NULL,window_name => NULL);
 exec  DBMS_AUTO_TASK_ADMIN.DISABLE( client_name =>  'auto space advisor', operation => NULL,window_name => NULL);
